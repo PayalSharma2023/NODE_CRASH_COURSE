@@ -1,1 +1,25 @@
 hello world
+
+if you want to add any new folder from vs studio to git hub
+then do as follows
+
+1. go to remote explorer
+2. click on add new repository
+3. then add from github
+4. type the address of that repository 
+5. enter
+ go to explorer
+ --> file --> open folder <open that folder which you want to add and post in github>
+
+
+ clone repository--> enter address then ---> save the repository folder in your computer
+ and then copy paste files there
+
+ save
+ make changes
+
+ compile with a message
+ sync changes
+
+ now it's
+ DONE
