@@ -1,0 +1,32 @@
+
+we cannont run js directly on the computer but we can run it on the browser (as there is v8 engine written in c++ in browser )
+V8 engine compiles javascript into machine code
+but it cannot run outside browser because there is no v8 engine outside browser
+to solve this
+node comes into play
+node.js also written in c++ that wraps the v8 engine
+due to which we can now run js on computer as well as servers
+.. node :  read and write files on computer
+           connect to a database
+           Act as as a server for content
+           
+
+installing node js 
+cmd : node -v (will give version of your node ie v18.17.1)
+using vs code as a text editor rather than node comand prompt
+type:  node 
+return ->( Welcome to Node.js v18.17.1.)
+(To exit, press Ctrl+C again or Ctrl+D or type .exit)
+cd documents
+cd tuts
+mkdir node_crash_course
+cd node_crash_course
+code .
+
+in the terminal:
+node test(<-- file name whose output you wanna see)
+
+in browser we have global object window but not in node 
+
+node <filename>  ----> to get output in powershell
+clear (to clean powershell)
