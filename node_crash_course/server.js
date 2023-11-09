@@ -1,5 +1,7 @@
 const http = require("http");
 const fs = require("fs");
+const _= require("nodemon")
+
 const server = http.createServer((req, res)=>{
     console.log(req.url, req.method);
     
@@ -26,7 +28,12 @@ const server = http.createServer((req, res)=>{
             res.statusCode = 404;
             break; 
     }
-
+    const greet = ()=>{
+        console.log('hello')
+    }
+    _.once(greet());
+    greet()
+    greet()
 
     //send an html file
     fs.readFile(path, (err,data)=>{
