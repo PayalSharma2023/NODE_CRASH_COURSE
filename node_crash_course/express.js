@@ -4,7 +4,7 @@ const ejs = require("ejs")
 const app = express();
 
 //register view engine
-app.set('view engine', ejs);
+app.set('view engine', "ejs");
 
 //listen for request
 app.listen(3000);
@@ -16,9 +16,9 @@ app.get('/', (req,res) => {
 
 });
 app.get('/about', (req,res) => {
-    res.sendFile('./views/about.html', {root: __dirname});
+   // res.sendFile('./views/about.html', {root: __dirname});
     //res.send('<p> About page </p>');
-    
+    res.render("about");
 });
 
 //redirects
@@ -28,5 +28,6 @@ app.get('/about-us', (req, res) => {
 
 //404 page
 app.use((req, res) => {
-    res.sendFile('./views/404.html', {root: __dirname})
+   // res.sendFile('./views/404.html', {root: __dirname})
+   res.status(404).render('404');
 });
