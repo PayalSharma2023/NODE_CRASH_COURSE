@@ -30,3 +30,8 @@ in browser we have global object window but not in node
 
 node <filename>  ----> to get output in powershell
 clear (to clean powershell)
+
+to solve nodemon issue
+Get-ExecutionPolicy
+run command given below in powershell
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
