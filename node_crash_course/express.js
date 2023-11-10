@@ -1,10 +1,10 @@
 const express = require('express');
-
+const ejs = require("ejs")
 // express app
 const app = express();
 
 //register view engine
-app.set('view engine', 'ejs');
+app.set('view engine', ejs);
 
 //listen for request
 app.listen(3000);
