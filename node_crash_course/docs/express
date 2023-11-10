@@ -1,0 +1,9 @@
+to create package.json
+npm init
+
+npm i -g nodemon
+
+
+
+
+npm install express
