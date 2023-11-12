@@ -6,6 +6,8 @@ const morgan = require("morgan");
 const mongoose = require('mongoose')
 const mongodb = require('mongodb');
 const dbURI = "mongodb+srv://peacko:peackopeacko1312@peacko.bl5glnj.mongodb.net//"
+mongoose.connect(dbURI);
+
 //register view engine
 app.set('view engine', "ejs");
 
