@@ -3,7 +3,9 @@ const ejs = require("ejs");
 // express app
 const app = express();
 const morgan = require("morgan");
-
+const mongoose = require('mongoose')
+const mongodb = require('mongodb');
+const dbURI = "mongodb+srv://peacko:peackopeacko1312@peacko.bl5glnj.mongodb.net//"
 //register view engine
 app.set('view engine', "ejs");
 
@@ -12,8 +14,24 @@ app.listen(3000);
 
 // middleware & static files
 app.use(express.static('public'));
-
+app.use(express.urlencoded({extended: true}));
 app.use(morgan('dev'));
+
+
+app.post('/blogs', (req, res)=>{
+    console.log(req.body);
+    // const blog = new blog(req.body);
+    
+    // blog.save()
+    //     .then((result)=>{
+    //         res.redirect('/bogs');
+    //     })
+    //     .catch((err) => {
+    //         console.log(err)  
+    //     })
+
+});
+
 
 app.use((req, res, next) => {
     console.log('new request made:');
@@ -55,6 +73,9 @@ app.get('/about-us', (req, res) => {
 app.get('/blogs/create', (req, res) => {
     res.render("create", {title: "create new blog"});
 });
+
+
+
 
 //404 page
 app.use((req, res) => {
