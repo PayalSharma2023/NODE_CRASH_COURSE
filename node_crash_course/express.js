@@ -88,7 +88,7 @@ app.get('/', (req,res) => {
     ];
 // res.send('<p> home page </p>');
     //res.sendFile('./views/index.html', {root: __dirname});
-    res.render('index', { title: "Home", blogs });
+    res.render('blogs/index', { title: "Home", blogs });
 
 });
 
