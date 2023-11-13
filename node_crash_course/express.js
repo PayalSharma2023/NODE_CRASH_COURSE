@@ -67,21 +67,6 @@ app.use(morgan('dev'));
 // })
 
 
-app.post('/blogs', (req, res)=>{
-    console.log(req.body);
-    const blog = new Blog(req.body);
-    
-    blog.save()
-    .then((result)=>{
-        res.redirect('/bogs');
-    })
-    .catch((err) => {
-        console.log(err)  
-    })
-
-});
-
-
 app.use((req, res, next) => {
     console.log('new request made:');
     console.log('host:', req.hostname);
@@ -132,11 +117,37 @@ app.get('/about-us', (req, res) => {
     res.redirect('/about');
 });
 
-app.get('/blogs/create', (req, res) => {
-    res.render("create", {title: "create new blog"});
+app.post('/blogs', (req, res)=>{
+    console.log(req.body);
+    const blog = new Blog(req.body);
+    
+    blog.save()
+    .then((result)=>{
+        res.redirect('/bogs');
+    })
+    .catch((err) => {
+        console.log(err)  
+    })
+
 });
 
 
+app.get('/blogs/:id', (req,res) => {
+    const id = req.params.id;
+    //console.log(id)
+    Blog.findById(id)
+        .then(result => {
+            res.render('details', { blog: result, title: 'blog details'});
+        })
+        .catch(err => {
+            console.log(err)
+        })
+})
+
+
+app.get('/blogs/create', (req, res) => {
+    res.render("create", {title: "create new blog"});
+});
 
 
 //404 page
