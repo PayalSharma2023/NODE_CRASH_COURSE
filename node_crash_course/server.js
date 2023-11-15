@@ -1,9 +1,13 @@
 const http = require("http");
 const fs = require("fs");
-const _= require("nodemon")
+const _= require("lodash");
 
 const server = http.createServer((req, res)=>{
-    console.log(req.url, req.method);
+   // console.log(req.url, req.method);
+
+// lodash
+const num = random(0, 20);
+console.log(num);
     
 //set header content type 
     res.setHeader('Content-Type', 'text/html');
@@ -28,10 +32,10 @@ const server = http.createServer((req, res)=>{
             res.statusCode = 404;
             break; 
     }
-    const greet = ()=>{
+    const greet = _.once(()=>{
         console.log('hello')
-    }
-    _.once(greet());
+    });
+    
     greet()
     greet()
 
