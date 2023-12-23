@@ -1,0 +1,10 @@
+{
+    "configurations": [
+        {
+            "type": "chrome",
+            "name": "https://github.com/PayalSharma2023/NODE_CRASH_COURSE",
+            "request": "launch",
+            "url": "https://github.com/PayalSharma2023/NODE_CRASH_COURSE"
+        }
+    ]
+}
