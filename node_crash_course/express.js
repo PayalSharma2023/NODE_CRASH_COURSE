@@ -9,13 +9,12 @@ const BlogRoutes = require('./routes/blogRoutes.js')
 const app = express();
 
 //connect to mongodb
-const dbURI = "mongodb+srv://peacko:peackopeacko1312@peacko.bl5glnj.mongodb.net//"
-
+const dbURI = "mongodb+srv://peacko:peackopeacko1312@peacko.bl5glnj.mongodb.net/?retryWrites=true&w=majority"
 
 mongoose.connect(dbURI)
     .then((result) => {
-        app.listen(3000);
-        // console.log('connected to db')
+        app.listen(3001);
+         console.log('connected to db')
     })
     .catch((err) => {
         console.log(err)
